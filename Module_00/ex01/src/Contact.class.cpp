@@ -6,25 +6,25 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 01:07:48 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/08 04:46:47 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/05/08 21:51:05 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Contact.class.hpp"
 
-Contact::Contact(void) :
+Contact::Contact() :
 	_firstName(""),
 	_lastName(""),
 	_nickName(""),
 	_phoneNumber(""),
 	_darkestSecret("")
 {
-	std::cout << MAGENTA "Contact constructor called." RESET << std::endl;
+	std::cout << BLACK_ON_GREEN "Contact constructor called." RESET << std::endl;
 	return ;
 }
 
-Contact::~Contact(void) {
-	std::cout << MAGENTA "Contact destructor called." RESET << std::endl;
+Contact::~Contact() {
+	std::cout << BLACK_ON_RED "Contact destructor called." RESET << std::endl;
 	return ;
 }
 

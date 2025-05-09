@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   HumanA.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 01:49:48 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/08 21:40:05 by nifromon         ###   ########.fr       */
+/*   Created: 2025/05/08 23:35:41 by nifromon          #+#    #+#             */
+/*   Updated: 2025/05/09 00:23:08 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef HUMANA_CLASS_HPP
+# define HUMANA_CLASS_HPP
 
-# include <iostream>
-# include <string>
-# include <limits>
-# include <cstdlib>
+# include "Weapon.class.hpp"
 # include "Colors.hpp"
-# include "Contact.class.hpp"
 
-class	PhoneBook {
+// Class
+class HumanA {
 	public:
-						PhoneBook();
-						~PhoneBook();
-			void		add(void);
-			void		search(void);
+							HumanA(std::string name, Weapon & weapon);
+							~HumanA();
+			void			attack(void) const;
+			Weapon const &	getWeapon(void) const;
+			std::string		getName(void) const;
+			void			setWeapon(Weapon & newWeapon);
+			void			setName(std::string & newName);
 	private:
-			Contact		_contacts[8];
-			int			_nbrContactsAdded;
-			void		_printSavedContact(const Contact contact, int index) const;
-			std::string	_formatContactInfo(const std::string info) const;
+			Weapon &		_weapon;
+			std::string		_name;
 };
 
 #endif

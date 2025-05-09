@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 00:59:15 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/08 04:32:23 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/05/08 21:43:01 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 class Contact {
 	public:
-						Contact(void);
-						~Contact(void);
+						Contact();
+						~Contact();
 			void		createContact(void);
 			void		printContact(void) const;
 			std::string	getFirstName(void) const;

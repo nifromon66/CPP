@@ -6,21 +6,21 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 02:41:59 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/08 04:11:56 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/05/08 21:43:28 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/PhoneBook.class.hpp"
 
-PhoneBook::PhoneBook(void) :
+PhoneBook::PhoneBook() :
 	_nbrContactsAdded(0)
 {
-	std::cout << MAGENTA "PhoneBook constructor called." RESET << std::endl;
+	std::cout << PURPLE "PhoneBook constructor called." RESET << std::endl;
 	return ;
 }
 
-PhoneBook::~PhoneBook(void) {
-	std::cout << MAGENTA "PhoneBook destructor called." RESET << std::endl;
+PhoneBook::~PhoneBook() {
+	std::cout << BLUE "PhoneBook destructor called." RESET << std::endl;
 	return ;
 }
 
