@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 23:13:36 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/09 00:07:59 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/05/09 06:20:13 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int main(int argc, char *argv[]) {
 	if (argc != 2) {
-		std::cout << "Incorrect number of arguments [" << (argc - 1) << "] | Required [1]" << std::endl;
+		std::cout << RED "Incorrect number of arguments [" << (argc - 1) << "] | Required [1]" RESET << std::endl;
 		return (0); 
 	}
 	if (strcmp(argv[1], "1") == 0)

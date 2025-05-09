@@ -5,20 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 00:52:02 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/09 06:19:57 by nifromon         ###   ########.fr       */
+/*   Created: 2025/05/08 21:22:12 by nifromon          #+#    #+#             */
+/*   Updated: 2025/05/09 05:51:26 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/TextA.class.hpp"
-#include "../include/TextB.class.hpp"
+#include "../include/Harl.class.hpp"
 
-int	main(int argc, char *argv[]) {
-	if (argc != 4) {
-		std::cout << RED "Incorrect number of arguments [" << (argc - 1) << "] | Required [3]" RESET << std::endl;
-		return (0); 
-	}
-	TextA	source(argv[1]);
-	TextB	dest(source, argv[2], argv[3]);
+int	main(void) {
+	Harl	harl;
+
+	std::cout	<< std::endl << "[ DEBUG ] :" << std::endl;
+	harl.complain("DEBUG");
+	std::cout	<< std::endl << "[ INFO ] :" << std::endl;
+	harl.complain("INFO");
+	std::cout	<< std::endl << "[ WARNING ] :" << std::endl;
+	harl.complain("WARNING");
+	std::cout	<< std::endl << "[ ERROR ] :" << std::endl;
+	harl.complain("ERROR");
+	std::cout	<< std::endl << "[ UNKNOWN ] :" << std::endl;
+	harl.complain("UNKNOWN");
 	return (0);
 }

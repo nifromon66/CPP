@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 00:52:02 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/09 06:19:57 by nifromon         ###   ########.fr       */
+/*   Created: 2025/05/09 04:36:04 by nifromon          #+#    #+#             */
+/*   Updated: 2025/05/09 05:56:08 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/TextA.class.hpp"
-#include "../include/TextB.class.hpp"
+#ifndef HARL_CLASS_HPP
+# define HARL_CLASS_HPP
 
-int	main(int argc, char *argv[]) {
-	if (argc != 4) {
-		std::cout << RED "Incorrect number of arguments [" << (argc - 1) << "] | Required [3]" RESET << std::endl;
-		return (0); 
-	}
-	TextA	source(argv[1]);
-	TextB	dest(source, argv[2], argv[3]);
-	return (0);
-}
+# include <iostream>
+# include <string>
+# include "Colors.hpp"
+
+// Class
+class Harl {
+	public:
+			Harl();
+			~Harl();
+			void	complain(std::string level);
+	private:
+			void	_debug(void);
+			void	_info(void);
+			void	_warning(void);
+			void	_error(void);
+};
+
+// Function Alias
+typedef void	(Harl::*t_HarlFunc)(void);
+
+#endif
