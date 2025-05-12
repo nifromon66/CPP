@@ -6,16 +6,16 @@
 #    By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 00:27:28 by nifromon          #+#    #+#              #
-#    Updated: 2025/05/12 22:19:43 by nifromon         ###   ########.fr        #
+#    Updated: 2025/05/12 22:53:31 by nifromon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Argument
-NAME =				ClapTrap
+NAME =				DiamondTrap
 
 # Compiler
 CPP =				@c++
-CPPFLAGS =			-Wall -Werror -Wextra -std=c++98 -I $(INCLUDE)
+CPPFLAGS =			-Wall -Werror -Wextra -Wshadow -std=c++98 -I $(INCLUDE)
 
 # Directories
 SRC_DIR =			src
@@ -36,7 +36,10 @@ RESET =				\033[1;0m
 # Sources and objects
 SRC =				\
 					$(SRC_DIR)/main.cpp \
-					$(SRC_DIR)/ClapTrap.class.cpp
+					$(SRC_DIR)/ClapTrap.class.cpp \
+					$(SRC_DIR)/ScavTrap.class.cpp \
+					$(SRC_DIR)/FragTrap.class.cpp \
+					$(SRC_DIR)/DiamondTrap.class.cpp
 					
 OBJ =				$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 

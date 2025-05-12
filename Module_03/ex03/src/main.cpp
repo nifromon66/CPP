@@ -6,25 +6,35 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 06:27:40 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/12 11:46:58 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/05/12 23:25:31 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ClapTrap.class.hpp"
+#include "../include/ScavTrap.class.hpp"
+#include "../include/FragTrap.class.hpp"
+#include "../include/DiamondTrap.class.hpp"
 
 int	main(void) {
-	ClapTrap	trap1("Didier");
-	ClapTrap	trap2("Gontran");
-	ClapTrap	trap3(trap2);
+	DiamondTrap	scav1("Didier");
+	ClapTrap	clap1(scav1);
+	DiamondTrap	scav2("Gontran");
+	DiamondTrap	scav3(scav2);
 
-	std::cout << trap3 << std::endl;
-	trap3 = trap1;
-	std::cout << trap3 << std::endl;
-	trap3.attack("Girou");
-	std::cout << trap3 << std::endl;
-	trap3.takeDamage(3);
-	std::cout << trap3 << std::endl;
-	trap3.beRepaired(2);
-	std::cout << trap3 << std::endl;
+	std::cout << scav3 << std::endl;
+	scav3 = scav1;
+	std::cout << scav3 << std::endl;
+	scav3.attack("Girou");
+	std::cout << scav3 << std::endl;
+	scav3.takeDamage(50);
+	std::cout << scav3 << std::endl;
+	scav3.beRepaired(25);
+	std::cout << scav3 << std::endl;
+	scav3.whoAmI();
+	scav3.setEnergyPoints(0);
+	std::cout << scav3 << std::endl;
+	scav3.attack("Girou");
+	scav3.beRepaired(25);
+	std::cout << scav3 << std::endl;
 	return (0);
 }

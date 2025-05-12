@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 06:43:07 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/12 21:48:17 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/05/12 21:46:35 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ///////////////////////////////////////////////// Constructor / Destructor
 
 ClapTrap::ClapTrap() :
+	_type("ClapTrap"),
 	_name(""),
 	_hitPoints(10),
 	_energyPoints(10),
@@ -25,6 +26,7 @@ ClapTrap::ClapTrap() :
 }
 
 ClapTrap::ClapTrap(std::string name) :
+	_type("ClapTrap"),
 	_name(name),
 	_hitPoints(10),
 	_energyPoints(10),
@@ -47,6 +49,10 @@ ClapTrap::~ClapTrap() {
 
 ///////////////////////////////////////////////// Public member functions
 
+std::string	ClapTrap::getType(void) const {
+	return (_type);
+}
+
 std::string	ClapTrap::getName(void) const {
 	return (_name);
 }
@@ -61,6 +67,11 @@ int	ClapTrap::getEnergyPoints(void) const {
 
 int	ClapTrap::getAttackDamage(void) const {
 	return (_attackDamage);
+}
+
+void	ClapTrap::setType(std::string newType) {
+	this->_type = newType;
+	return ;
 }
 
 void	ClapTrap::setName(std::string newName) {
@@ -85,13 +96,13 @@ void	ClapTrap::setAttackDamage(int newAttackDamage) {
 
 void	ClapTrap::attack(std::string const & target) {
 	if (_energyPoints == 0) {
-		std::cout	<< "ClapTrap " << _name
+		std::cout	<< _type << " " << _name
 					<< " doesn't have enough energy points"
 					<< " to attack."
 					<< std::endl;
 		return ;
 	}
-	std::cout	<< "ClapTrap " << _name
+	std::cout	<< _type << " " << _name
 				<< " attacks " << target
 				<< " causing " << _attackDamage
 				<< " points of damage."
@@ -101,7 +112,7 @@ void	ClapTrap::attack(std::string const & target) {
 }
 
 void	ClapTrap::takeDamage(unsigned int amount) {
-	std::cout	<< "ClapTrap " << _name
+	std::cout	<< _type << " " << _name
 				<< " take " << amount
 				<< " points of damage."
 				<< std::endl;
@@ -111,13 +122,13 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (_energyPoints == 0) {
-		std::cout	<< "ClapTrap " << _name
+		std::cout	<< _type << " " << _name
 					<< " doesn't have enough energy points"
 					<< " to be repaired."
 					<< std::endl;
 		return ;
 	}
-	std::cout	<< "ClapTrap " << _name
+	std::cout	<< _type << " " << _name
 				<< " recover " << amount
 				<< " hit points."
 				<< std::endl;
@@ -143,7 +154,7 @@ ClapTrap &	ClapTrap::operator=(ClapTrap const & source) {
 
 std::ostream &	operator<<(std::ostream & out, ClapTrap const & in) {
 	out	<< std::endl
-		<< "========== [ " << in.getName() << " ] ==========" << std::endl << std::endl
+		<< "========== " << in.getType() << ": [ " << in.getName() << " ] ==========" << std::endl << std::endl
 		<< "Hit Points -> [ " << in.getHitPoints() << " ]." << std::endl
 		<< "Energy Points -> [ " << in.getEnergyPoints() << " ]." << std::endl
 		<< "Attack Damage -> [ " << in.getAttackDamage() << " ]." << std::endl

@@ -6,12 +6,12 @@
 #    By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/08 00:27:28 by nifromon          #+#    #+#              #
-#    Updated: 2025/05/12 22:19:43 by nifromon         ###   ########.fr        #
+#    Updated: 2025/05/12 22:19:29 by nifromon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Argument
-NAME =				ClapTrap
+NAME =				ScavTrap
 
 # Compiler
 CPP =				@c++
@@ -36,7 +36,8 @@ RESET =				\033[1;0m
 # Sources and objects
 SRC =				\
 					$(SRC_DIR)/main.cpp \
-					$(SRC_DIR)/ClapTrap.class.cpp
+					$(SRC_DIR)/ClapTrap.class.cpp \
+					$(SRC_DIR)/ScavTrap.class.cpp
 					
 OBJ =				$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
