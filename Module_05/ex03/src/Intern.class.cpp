@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 10:50:53 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/19 11:29:28 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/05/19 11:35:20 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Intern::Intern(void) {
 	std::cout << BLACK_ON_GREEN "Intern default constructor called." RESET << std::endl;
-	 return ;
+	return ;
 }
 
 Intern::Intern(Intern const & source) {
