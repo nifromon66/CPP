@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   TextB.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 03:56:24 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/09 04:12:46 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:35:58 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/TextB.class.hpp"
 
-TextB::TextB(TextA const & source, std::string const & target, std::string const & replace) : 
+TextB::TextB(TextA const & source, std::string const & target, std::string const & replace) :
 	_text(""),
 	_file(source.getFile() + ".replace")
 {
@@ -21,11 +21,13 @@ TextB::TextB(TextA const & source, std::string const & target, std::string const
 	std::size_t	j(0);
 	std::size_t	k(0);
 	int			diff(replace.length() - target.length());
-	
+
 	std::cout << BLACK_ON_GREEN "TextB constructor of : [" << _file << "] file called." RESET << std::endl;
-	while ((pos = source.getText().find(target, pos)) != std::string::npos) {
-		pos += target.length();
-		i++;
+	if (!target.empty()) {
+		while ((pos = source.getText().find(target, pos)) != std::string::npos) {
+			pos += target.length();
+			i++;
+		}
 	}
 	std::size_t	*occurences = new std::size_t[i + 1];
 	pos = 0;
