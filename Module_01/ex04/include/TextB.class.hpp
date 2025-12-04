@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   TextB.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 03:56:49 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/09 04:01:36 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/12/04 07:24:14 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ class TextB {
 			std::ofstream			*_fd;
 			std::string				_text;
 			std::string				_file;
-			
+
+			std::string				_search_and_replace(std::string lineA, std::string target, std::string replace);
+
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 03:56:24 by nifromon          #+#    #+#             */
-/*   Updated: 2025/12/02 11:35:58 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/12/04 07:38:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,21 @@ TextB::TextB(TextA const & source, std::string const & target, std::string const
 	_text(""),
 	_file(source.getFile() + ".replace")
 {
-	std::size_t	pos(0);
-	std::size_t	i(0);
-	std::size_t	j(0);
-	std::size_t	k(0);
-	int			diff(replace.length() - target.length());
-
 	std::cout << BLACK_ON_GREEN "TextB constructor of : [" << _file << "] file called." RESET << std::endl;
-	if (!target.empty()) {
-		while ((pos = source.getText().find(target, pos)) != std::string::npos) {
-			pos += target.length();
-			i++;
+
+	if (target.empty())
+		return ;
+	for (size_t i = 0; i < source.getText().length(); ++i) {
+		size_t	new_line = source.getText().find('\n', i);
+		if (new_line != std::string::npos)
+			_text += _search_and_replace(source.getText().substr(i, (new_line - i)), target, replace) + '\n';
+		else if (new_line == std::string::npos) {
+			_text += _search_and_replace(source.getText().substr(i), target, replace);
+			break ;
 		}
+		i += new_line - i;
 	}
-	std::size_t	*occurences = new std::size_t[i + 1];
-	pos = 0;
-	while (k < i && (pos = source.getText().find(target, pos)) != std::string::npos) {
-		if (k == 0)
-			occurences[k] = pos;
-		else
-			occurences[k] = pos + (k * diff);
-		pos += target.length();
-		i++;
-	}
-	for (j = 0, k = 0; source.getText()[j];) {
-		if (k < i && j == occurences[k]) {
-			_text.insert(occurences[k], replace);
-			j += target.length();
-			k++;
-		}
-		else {
-			_text.push_back(source.getText()[j]);
-			j++;
-		}
-	}
-	delete[] occurences;
+
 	std::ofstream	OutputFd(_file.c_str());
     _fd = &OutputFd;
     if (!OutputFd.is_open()) {
@@ -60,6 +40,20 @@ TextB::TextB(TextA const & source, std::string const & target, std::string const
     OutputFd << _text;
     OutputFd.close();
 	return ;
+}
+
+std::string	TextB::_search_and_replace(std::string line, std::string target, std::string replace)
+{
+	std::size_t	pos = 0;
+
+	while ((pos = line.find(target, pos)) != std::string::npos)
+	{
+		std::string before = line.substr(0, pos);
+		std::string	after = line.substr(pos + target.length());
+		line = before + replace + after;
+		pos += replace.length();
+	}
+	return (line);
 }
 
 TextB::~TextB() {
