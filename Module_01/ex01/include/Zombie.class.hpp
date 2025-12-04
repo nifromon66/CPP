@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 08:38:33 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/08 22:16:25 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/12/04 06:41:08 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Zombie {
 						Zombie(std::string name);
 						Zombie();
 						~Zombie();
-			void		annouce(void);
+			void		announce(void);
 			void		setName(std::string name);
 			std::string	getName(void) const;
 	private:

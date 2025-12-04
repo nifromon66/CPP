@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 21:22:12 by nifromon          #+#    #+#             */
-/*   Updated: 2025/05/08 22:25:06 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/12/04 06:41:08 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int	main(void) {
 	horde = zombieHorde(100, "Lucille");
 	std::cout << std::endl;
 
-	std::cout << "Making the horde annouce themselves" << std::endl << std::endl;
+	std::cout << "Making the horde announce themselves" << std::endl << std::endl;
 	for (int i = 0; i < 100; ++i)
-		horde[i].annouce();
+		horde[i].announce();
 	std::cout << std::endl;
 	delete[] horde;
 	return (0);
