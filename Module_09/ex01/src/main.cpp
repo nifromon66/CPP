@@ -5,26 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 13:16:00 by nifromon          #+#    #+#             */
-/*   Updated: 2026/06/24 13:16:19 by nifromon         ###   ########.fr       */
+/*   Created: 2026/06/24 13:24:23 by nifromon          #+#    #+#             */
+/*   Updated: 2026/06/24 13:24:25 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstdlib>
-#include "../include/BitcoinExchange.hpp"
+#include "../include/RPN.hpp"
 
 int main(int ac, char **av)
 {
-	(void)ac;
-	try
-	{
-		BitcoinExchange be;
-		be.analyse(av[1]);
+	if (ac != 2) {
+		std::cerr << "Error: one argument needed!" << std::endl;
+		return (1);
 	}
-	catch(const std::exception& e)
-	{
+
+
+	try {
+		std::string input(av[1]);
+		RPN rpn(input);
+		std::cout << rpn.getResult() << std::endl;
+	}
+	catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
-    return (0);
+	return (0);
 }

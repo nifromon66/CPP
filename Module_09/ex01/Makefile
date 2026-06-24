@@ -6,13 +6,13 @@
 #    By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/19 16:37:35 by nifromon          #+#    #+#              #
-#    Updated: 2026/06/24 13:17:13 by nifromon         ###   ########.fr        #
+#    Updated: 2026/06/24 13:25:00 by nifromon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Argument
-NAME =				btc
+NAME =				RPN
 
 # Compiler
 CPP =				@c++
@@ -37,7 +37,7 @@ RESET =				\033[1;0m
 # Sources and objects
 SRC =				\
 					$(SRC_DIR)/main.cpp \
-					$(SRC_DIR)/BitcoinExchange.cpp
+					$(SRC_DIR)/RPN.cpp
 
 OBJ =				$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
