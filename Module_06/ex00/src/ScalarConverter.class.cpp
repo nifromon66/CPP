@@ -146,7 +146,7 @@ static void	print_float(float f)
 		std::cout << "char: '" << static_cast <char> (f) << "'" << std::endl;
 	else
 		std::cout << "char: non displayable" << std::endl;
-	if (f > 2147483647 || f < -2147483648)
+	if (f > 2147483648 || f < -2147483648)
 		std::cout << "int: out of range" << std::endl;
 	else
 		std::cout << "int: " << static_cast<int>(f) << std::endl;

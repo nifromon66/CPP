@@ -26,10 +26,9 @@ class A : public Base {
 			A(A const & source);
 			~A(void);
 			A & operator=(A const & source);
-
-	private:
-			friend std::ostream & operator<<(std::ostream & out, A & in);
 };
+
+std::ostream & operator<<(std::ostream & out, A & in);
 
 
 #endif
