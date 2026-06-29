@@ -18,6 +18,7 @@
 template<typename T>
 Array<T>::Array(void) : _size(0), _ptr(NULL) {
 	std::cout << BLACK_ON_GREEN "Array default constructor called." RESET << std::endl;
+	_ptr = new T[0];
 	 return ;
 }
 
